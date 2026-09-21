@@ -1,7 +1,7 @@
 /**
 * ============================================================================
 * COMPONENT: VÙNG KÍN & BẢO MẬT (PrivateNotes.jsx)
-* Author: [Bùi Lê Ngọc Ngân]
+* Author: [Bùi Lê Ngọc Ngân_0306241380]
 *
 * [LƯU Ý]: Sử dụng lại phần lớn UI từ Notes.jsx. Thêm state isUnlocked để làm "cửa
 bảo vệ".
