@@ -19,7 +19,14 @@ function Settings() {
   }, []);
   // Hàm xử lý khi gõ vào Input
   const handleChange = (e) => {
-    setProfile({ ...profile, [e.target.name]: e.target.value });
+    const updatedProfile = { ...profile, [e.target.name]: e.target.value };
+    setProfile(updatedProfile);
+
+    // THÊM 2 DÒNG NÀY: Đổi màu ngay khi vừa bấm chọn theme
+    document.body.style.backgroundColor =
+      updatedProfile.theme === "dark" ? "#333" : "#fff";
+    document.body.style.color =
+      updatedProfile.theme === "dark" ? "#fff" : "#000";
   };
   // Hàm xử lý Lưu thay đổi
   const handleSave = () => {
