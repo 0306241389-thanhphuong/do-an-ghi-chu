@@ -14,7 +14,7 @@ function App() {
             width: "200px",
             padding: "20px",
             borderRight: "1px solid #ccc",
-            backgroundColor: "#8d8b8b",
+            backgroundColor: "#f8f0f0",
           }}
         >
           <h3>Menu</h3>
@@ -23,7 +23,7 @@ function App() {
               <Link to="/">Ghi chú công khai</Link>
             </li>
             <li style={{ marginBottom: "10px" }}>
-              <Link to="/private">Vùng kín</Link>
+              <Link to="/private">Vùng Riêng Tư</Link>
             </li>
             <li style={{ marginBottom: "10px" }}>
               <Link to="/settings">Cài đặt</Link>
