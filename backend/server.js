@@ -45,6 +45,48 @@ const notesDir = path.join(__dirname, "data", "notes");
 if (!fs.existsSync(notesDir)) {
   fs.mkdirSync(notesDir, { recursive: true });
 }
+
+// ============================================================================
+// 2. API TÌM KIẾM XUYÊN TẤT CẢ CÁC CHỦ ĐỀ
+// (BẮT BUỘC ĐẶT TRƯỚC API /api/notes/:topic)
+// ============================================================================
+app.get("/api/notes-search/all", (req, res) => {
+  const query = (req.query.q || "").toLowerCase();
+
+  try {
+    if (!fs.existsSync(notesDir)) return res.json([]);
+
+    const files = fs.readdirSync(notesDir).filter((f) => f.endsWith(".json"));
+    let searchResults = [];
+
+    files.forEach((file) => {
+      const topicName = path.basename(file, ".json");
+      const filePath = path.join(notesDir, file);
+
+      if (fs.existsSync(filePath)) {
+        const fileContent = fs.readFileSync(filePath, "utf8");
+        const notes = JSON.parse(fileContent || "[]");
+
+        const matchedNotes = notes
+          .filter(
+            (note) =>
+              (note.title && note.title.toLowerCase().includes(query)) ||
+              (note.content && note.content.toLowerCase().includes(query)),
+          )
+          .map((note) => ({ ...note, topic: topicName }));
+
+        searchResults = searchResults.concat(matchedNotes);
+      }
+    });
+
+    res.json(searchResults);
+  } catch (error) {
+    console.error("Lỗi tìm kiếm:", error);
+    res.status(500).json({ message: "Lỗi máy chủ khi tìm kiếm" });
+  }
+});
+// ============================================================================
+
 const getFilePath = (topic) => path.join(notesDir, `${topic}.json`);
 // 1. Lấy danh sách ghi chú (GET)
 app.get("/api/notes/:topic", (req, res) => {
