@@ -1,12 +1,12 @@
 # ĐỒ ÁN MÔN HỌC: ỨNG DỤNG QUẢN LÝ GHI CHÚ (REACTJS & NODEJS)
 
-**Giảng viên hướng dẫn:** [Tên giảng viên]
-**Nhóm thực hiện:** Nhóm [Số nhóm]
+**Giảng viên hướng dẫn:** Lữ cao Tiến
+**Nhóm thực hiện:** Nhóm 9
 **Thành viên:**
 
-1. [Họ tên] - [Mã SV] - Vai trò: PM & QA
-2. [Họ tên] - [Mã SV] - Vai trò: Frontend Developer
-3. [Họ tên] - [Mã SV] - Vai trò: Backend Developer
+1. Võ Thị Thanh Phương - 0306241389 - Vai trò: PM & QA
+2. Bùi Lê Ngọc Ngân - 0306241380 - Vai trò: Frontend Developer
+3. Đoàn Kim Cương - 0306241264 - Vai trò: Backend Developer
 
 ## 1. Công nghệ sử dụng
 
